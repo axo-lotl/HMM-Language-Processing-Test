@@ -1,0 +1,41 @@
+What counts as an "observation?"
+
+There are over 3000 distinct words. Then O has dimensions [# states, ~3500]
+which is quite undesirable. Despite this, there doesn't seem to be a better
+approach.
+Some sample length-10 sequences:
+5 states: a of in flame yellow and care heart am love
+10 states: better i to is hold pricked for to each up
+20 states: i taught yet a have applying all part manys perfectst
+40 states: my dedicated might golden and my no it a tickled
+80 states: my i bear his being from every upon with reckon
+
+
+Supervised Based on Stress Signature:
+In an attempt to accomplish metering, we tried a supervised HMM with the states
+being the stress signature of the word. The stress signature simply denotes
+whether each syllable in the word is stressed or unstressed. For example,
+"savannah" is 010, since only the second syllable is stressed. "Whistling" is
+10. There were 19 unique stress signatures in Shakespeare's poems, the most
+common being 0 (2872 times) and 1 (11158 times). The least common were 0010 and
+1101, each occuring one time. Therefore, we made 19 states.
+Fully supervised training was in test2.py
+sample sentences:
+wide such purity i beauty my thee action o is
+indireclty i i others west quicker tomb changes glazed of
+releasing thought doth make to-morrow on antique the since thou
+into thought that o a it heavenly look matter catch
+every days prouder above pictured what a shalt guides part
+
+Next we try supervised based on part of speech.
+This was in test3.py
+when may the dearest amis in feeds were you have
+robe that violet is for heaven is love shall be
+record image not as that outlive and account lovely serving
+stay state mans to love this keeps made from his
+up my tell part on we not thy every moving
+should so own thou worth to make their at the
+fair use a day till and thinly to believe better
+five buds my grow and no will justify speed you
+more benefit with death see thy saucy was now though
+those beautys others wise of book of eye when pride
